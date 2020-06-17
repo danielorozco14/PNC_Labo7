@@ -3,7 +3,6 @@ package com.uca.labo7.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,13 +67,7 @@ public class MainController {
 	@RequestMapping("/borrarEstudiante")//ESTA FUNCION SOLO DA LA UI PARA BORRAR EL DATO
 	public ModelAndView borrar() {
 		ModelAndView mav = new ModelAndView();
-		
-		Estudiante est = new Estudiante();
-		
 		mav.setViewName("borrarEstudiante");
-		
-		
-		
 		return mav;
 	}
 	
@@ -105,11 +98,17 @@ public class MainController {
 	
 	@PostMapping("/search")//Este busca al estudiante
 	public ModelAndView search(@RequestParam(value="codigoUsuario")int id) {
-		ModelAndView mav= new ModelAndView();
-		Estudiante est = estudianteService.findOne(id);
+		ModelAndView mav= new ModelAndView();		
 		ArrayList<Estudiante> lista= new ArrayList<>();
 		try {
-			lista.add(est);
+			Estudiante est = estudianteService.findOne(id);
+			if(est.getCodigoUsuario()!=0) {
+				lista.add(est);
+			}
+			else {
+				mav.setViewName("errorBusqueda");
+				return mav;
+			}			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -120,6 +119,16 @@ public class MainController {
 		return mav;
 	}
 	
+	//Editar Estudiante
+	@RequestMapping(value = "/editarEstudiante", method= RequestMethod.POST)
+	public ModelAndView editar(@RequestParam(value = "codigo") int id) {
+		ModelAndView mav = new ModelAndView();
+		Estudiante estudiante = estudianteService.findOne(id);
+		mav.addObject("estudiante", estudiante);
+		mav.setViewName("ingresarEstudiante");		//MIRAR ESTO
+		return mav;
+	
+	}
 	
 	//Mostrar Lista de Estudiantes
 	

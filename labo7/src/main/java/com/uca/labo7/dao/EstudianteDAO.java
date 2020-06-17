@@ -2,10 +2,7 @@ package com.uca.labo7.dao;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.dao.DataAccessException;
-
 import com.uca.labo7.domain.Estudiante;
 
 public interface EstudianteDAO {

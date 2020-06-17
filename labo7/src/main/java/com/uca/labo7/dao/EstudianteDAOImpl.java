@@ -54,9 +54,16 @@ public class EstudianteDAOImpl implements EstudianteDAO {
 
 	@Override
 	public Estudiante findOne(Integer code) throws DataAccessException {
-		Estudiante est = entityManager.find(Estudiante.class, code);
 		
-		return est;
+		if(entityManager.find(Estudiante.class, code)==null) {
+			Estudiante est = new Estudiante();
+			est.setCodigoUsuario(0);
+			return est;
+		}else {
+			Estudiante est = entityManager.find(Estudiante.class, code);	
+			return est;
+		}		
+		
 	}
 	
 	

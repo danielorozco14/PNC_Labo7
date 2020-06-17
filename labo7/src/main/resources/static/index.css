@@ -1,12 +1,12 @@
 body{
 	align-items:center;
-	margin:50px 300px;
+	margin:7em 100px;
 	font-size:1.2em;
 }
 
 .index-forms{
-	margin:5em;
-	display:inline-block;
+	margin:2em;
+	display:flex;
 }
 form{
 	display: inline-block;

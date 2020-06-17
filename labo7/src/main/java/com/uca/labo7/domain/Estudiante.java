@@ -22,12 +22,12 @@ public class Estudiante {
 	@Size(message="El nombre no debe ser mas grande que 30 caracteres",max=50)
 	@NotEmpty(message="Campo Obligatorio")
 	@Column(name="nombre")
-	private String Nombre;
+	private String nombre;
 	
 	@Size(message="El apellido no debe ser mas grande que 30 caracteres",max=50)
 	@NotEmpty(message="Campo Obligatorio")	
 	@Column(name="apellido")
-	private String Apellido;
+	private String apellido;
 	
 	@Size(message="El Carnet no debe ser mas grande que 10 caracteres",max=10)
 	@NotEmpty(message="Campo Obligatorio")
@@ -48,19 +48,19 @@ public class Estudiante {
 	}
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		Nombre = nombre;
+	public void setNombre(String Nombre) {
+		nombre = Nombre;
 	}
 
 	public String getApellido() {
-		return Apellido;
+		return apellido;
 	}
 
-	public void setApellido(String apellido) {
-		Apellido = apellido;
+	public void setApellido(String Apellido) {
+		apellido = Apellido;
 	}
 
 	public String getCarnet() {

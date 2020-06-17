@@ -14,27 +14,44 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<h1>Sistema de Ingreso de Estudiantes</h1>
 	<div class="index-forms">
 	
 	
 		<form th:action="@{/agregarEstudiante}">
-			<input type="submit" class="btn btn-primary" value="Insertar Nuevo Estudiante">
+			<div class="index-forms">
+				<input type="submit" class="btn btn-primary" value="Insertar Nuevo Estudiante">
+			</div>
 		</form>
 		
 		<form th:action="@{/borrarEstudiante}">
-			<input type="submit" class="btn btn-primary" value="Borrar Estudiante">
+			<div class="index-forms">
+				<input type="submit" class="btn btn-danger" value="Borrar Estudiante">
+			</div>
 		</form>
 		
 		<form th:action="@{/buscarEstudiante}">
-			<input type="submit" class="btn btn-primary" value="Buscar Estudiante">
+			<div class="index-forms">
+				<input type="submit" class="btn btn-secundary" value="Buscar Estudiante">
+			</div>
 		</form>
 		
 		
 		<form th:action="@{/listado}">
-			<input type="submit"class="btn btn-primary" value="Lista de Estudiantes">
-		</form>
+			<div class="index-forms">
+				<input type="submit"class="btn btn-info" value="Lista de Estudiantes">
+			</div>
+		</form><br>
+		
+	
 	
 	</div>
+	<h2>Editar </h2>
+		<form th:action="@{/editarEstudiante}" method="post">
+			<label>Ingrese codigo de estudiante para editar:</label><input type="number" name="codigo"><br>
+			<input type="submit" class="btn btn-info" value="Editar Estudiante">
+		</form>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

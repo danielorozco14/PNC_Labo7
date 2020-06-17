@@ -11,9 +11,14 @@ public interface EstudianteService {
 	
 	public List<Estudiante> findAll() throws DataAccessException;
 	
-	public Estudiante findOne(Integer codigo) throws DataAccessException;
+	public Estudiante findOne(Integer code) throws DataAccessException;
 	
 	public void save(Estudiante estudiante) throws DataAccessException;
-	public void delete(Integer codigo) throws DataAccessException;
+	
+	public void delete(Integer codigoEstudiante) throws DataAccessException;
+
+	public List<Estudiante> filtrarPor(String Nombre) throws DataAccessException;
+
+	public List<Estudiante> startingWith(String Apellido) throws DataAccessException;
 	
 }
